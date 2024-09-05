@@ -1,0 +1,36 @@
+# GET alle turistattraktioner
+GET http://localhost:8080/attractions
+Accept: application/json
+
+###
+
+# GET en specifik turistattraktion ved navn
+GET http://localhost:8080/attractions/Tivoli
+Accept: application/json
+
+###
+
+# POST for at tilføje en ny turistattraktion
+POST http://localhost:8080/attractions/add
+Content-Type: application/json
+
+{
+  "name": "Ny Attraktion",
+  "description": "Beskrivelse af den nye attraktion"
+}
+
+###
+
+# POST for at opdatere en eksisterende turistattraktion
+POST http://localhost:8080/attractions/update?name=Tivoli
+Content-Type: application/json
+
+{
+  "name": "Tivoli",
+  "description": "Opdateret beskrivelse af Tivoli"
+}
+
+###
+
+# POST for at slette en turistattraktion ved navn
+POST http://localhost:8080/attractions/delete/Tivoli
